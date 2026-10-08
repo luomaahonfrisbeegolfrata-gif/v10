@@ -1,0 +1,66 @@
+{
+  "course_id": "44010",
+  "par": 41,
+  "top10": [
+    {
+      "rank": 1,
+      "name": "Toni Luoma-aho",
+      "total": 42,
+      "plus_minus": "+1"
+    },
+    {
+      "rank": 2,
+      "name": "Eino Vistiaho",
+      "total": 43,
+      "plus_minus": "+2"
+    },
+    {
+      "rank": 3,
+      "name": "Benjamin Turja",
+      "total": 44,
+      "plus_minus": "+3"
+    },
+    {
+      "rank": 4,
+      "name": "Jari Vistiaho",
+      "total": 46,
+      "plus_minus": "+5"
+    },
+    {
+      "rank": 5,
+      "name": "Julius Luoma-aho",
+      "total": 47,
+      "plus_minus": "+6"
+    },
+    {
+      "rank": 6,
+      "name": "Joakim Turja",
+      "total": 49,
+      "plus_minus": "+8"
+    },
+    {
+      "rank": 7,
+      "name": "Jouni Peltomäki",
+      "total": 49,
+      "plus_minus": "+8"
+    },
+    {
+      "rank": 8,
+      "name": "Juha Luoma-aho",
+      "total": 51,
+      "plus_minus": "+10"
+    },
+    {
+      "rank": 9,
+      "name": "Juha Vainio",
+      "total": 55,
+      "plus_minus": "+14"
+    },
+    {
+      "rank": 10,
+      "name": "Mika Korkea-aho",
+      "total": 57,
+      "plus_minus": "+16"
+    }
+  ]
+}

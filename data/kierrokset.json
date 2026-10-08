@@ -1,0 +1,18 @@
+{
+  "total_rounds": 1170,
+  "unique_players": 132,
+  "peliaika": {
+    "display": "1524h",
+    "hours": 1524
+  },
+  "askeleet": {
+    "display": "3 192 132",
+    "count": 3192132
+  },
+  "kilometrit": {
+    "display": "2328 km",
+    "km": 2328
+  },
+  "fetched_at": "2026-10-07T12:30:00Z",
+  "version": "V29 KORJATTU - skaalautuu, ei TOP10 uniikit"
+}
