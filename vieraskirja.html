@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Vieraskirja - Luoma-ahon Frisbeegolfrata</title>
+<style>
+:root{--bg:#070708;--card:#151515;--border:#242424;--green:#1aff1a;--gold:#ffcc00}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:#fff;font-family:Inter,system-ui,sans-serif}
+header{height:56px;background:#0f0f0f;border-bottom:1px solid #242424;display:flex;align-items:center;justify-content:space-between;padding:0 12px;position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px}.brand-logo{width:35px;height:35px;background:#fff;border-radius:50%;overflow:hidden;display:grid;place-items:center}
+.wrap{max-width:1920px;margin:0 auto;padding:10px}
+.grid-vieraskirja{display:grid;grid-template-columns:340px 1fr;gap:10px}
+.card{background:#151515;border:1px solid #242424;border-radius:10px;padding:0;overflow:hidden;display:flex;flex-direction:column}
+.card-form{height:560px;min-height:560px;width:340px;min-width:340px}
+.card-list{height:560px;min-height:560px;width:100%;min-width:320px}
+.top10-title{font-size:11px;color:#aaa;display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-bottom:1px solid #222;background:#111}
+.top10-title b{color:#1aff1a;font-size:10px}
+.form-body{flex:1;padding:12px;display:flex;flex-direction:column;overflow-y:auto}
+label{font-size:10px;color:#888;text-transform:uppercase;font-weight:700;display:block;margin:10px 0 5px 0}
+input[type="text"],textarea{width:100%;background:#0a0a0a;border:1px solid #2a2a2a;border-radius:6px;color:#fff;padding:8px 10px;font-family:inherit;font-size:12px;outline:none}
+input[type="text"]:focus,textarea:focus{border-color:#1aff1a}
+textarea{resize:none;flex:1;min-height:80px;line-height:1.4}
+.btn{display:inline-flex;align-items:center;justify-content:center;width:100%;margin-top:10px;background:#1aff1a;color:#000;border:0;border-radius:8px;padding:10px;font-weight:800;font-size:12px;cursor:pointer}
+.btn-secondary{background:#222;color:#fff;border:1px solid #333;margin-top:6px;font-size:11px;padding:8px;border-radius:6px;cursor:pointer;flex:1}
+.tiedote-list{flex:1;overflow-y:auto;padding:0;display:flex;flex-direction:column}
+.tiedote-item{padding:10px 12px;border-bottom:1px solid #1e1e1e}
+.tiedote-date{font-size:9px;color:#666}.tiedote-title{font-size:12px;font-weight:800;color:#1aff1a;margin:3px 0;display:flex;gap:6px;align-items:center}.tiedote-msg{font-size:11px;color:#bbb;line-height:1.4;white-space:pre-wrap;word-break:break-word}
+.empty{color:#666;font-size:12px;text-align:center;padding:40px 20px;border:1px dashed #242424;border-radius:8px;margin:10px}
+.counter{font-size:10px;color:#666;margin-top:6px;text-align:right}
+.json-box{margin-top:10px;background:#0a0a0a;border:1px solid #1aff1a33;border-radius:6px;padding:10px;display:none;max-height:200px;overflow:auto}
+.json-box pre{margin:0;font-size:9px;color:#888;white-space:pre-wrap;word-break:break-all;background:#000;padding:6px;border-radius:4px;max-height:120px;overflow:auto}
+.stars-input{display:flex;gap:4px;margin:6px 0}.star-input{font-size:22px;color:#333;cursor:pointer;user-select:none}.star-input.active{color:var(--gold)}
+.stars-display{display:inline-flex;gap:1px;font-size:11px}.star-display{color:#333}.star-display.filled{color:var(--gold)}
+.avg-box{display:flex;align-items:center;gap:6px;background:#1a1a1a;border:1px solid #242424;border-radius:8px;padding:6px 10px;margin:8px 10px}
+.avg-stars{font-size:14px;color:var(--gold)}.avg-text{font-size:11px;color:#fff;font-weight:700}.avg-count{font-size:9px;color:#666}
+@media (max-width:768px){.grid-vieraskirja{grid-template-columns:1fr!important}.card-form{width:100%!important;min-width:100%!important;height:auto!important;min-height:380px!important}.card-list{width:100%!important;min-width:100%!important}}
+</style></head><body>
+<header>
+<div class="brand"><div class="brand-logo"><img src="logot/l-a-friba-logo.jpg" alt="L-A FRIBA" style="width:35px;height:35px;object-fit:cover;display:block"/></div> Luoma-ahon Frisbeegolfrata</div>
+<div class="header-icons"><a href="./index.html" style="width:71px;height:35px;min-width:71px;background:#1aff1a;color:#000;border-radius:8px;display:grid;place-items:center;font-size:10px;font-weight:800;text-decoration:none">ETUSIVU</a></div></header>
+<div class="wrap"><div class="grid-vieraskirja">
+<div class="card card-form"><div class="top10-title"><span>VIERASKIRJA - KIRJOITA</span><b>LIVE</b></div><div class="form-body">
+<label for="v-name">Nimi / Nimimerkki</label><input type="text" id="v-name" placeholder="Esim. Jari - Seinäjoki" maxlength="30"/>
+<label>Arvostelu</label><div class="stars-input" id="stars-input"><span class="star-input" data-val="1">★</span><span class="star-input" data-val="2">★</span><span class="star-input" data-val="3">★</span><span class="star-input" data-val="4">★</span><span class="star-input" data-val="5">★</span><span id="rating-label" style="font-size:10px;color:#666;margin-left:6px">Valitse 1-5 tähteä</span></div>
+<label for="v-msg">Viesti</label><textarea id="v-msg" placeholder="Miten rata maistui?" maxlength="500"></textarea><div class="counter"><span id="v-counter">0</span> / 500</div>
+<button class="btn" id="v-send">LÄHETÄ VIESTI →</button>
+<div class="json-box" id="json-box"><pre id="json-preview"></pre><div style="display:flex;gap:6px;margin-top:6px"><button class="btn-secondary" id="btn-download">⬇️ LATAA JSON</button><button class="btn-secondary" id="btn-copy">📋 KOPIOI</button></div></div>
+</div></div>
+<div class="card card-list"><div class="top10-title"><span>VIERASKIRJA - VIESTIT</span><b id="v-count">0 viestiä</b></div><div class="avg-box" id="avg-box" style="display:none"><span class="avg-stars" id="avg-stars"></span><span class="avg-text" id="avg-text">0.0</span><span class="avg-count" id="avg-count">(0 arvostelua)</span></div><div class="tiedote-list" id="v-list"><div class="empty">Ei vielä viestejä - ole ensimmäinen! ✨<br><small style="color:#444">Kirjoita vasemmalle ja tallenna JSON GitHubiin</small></div></div></div>
+</div></div>
+<script>
+const JSON_PATH="data/vieraskirja.json";let entries=[];let selectedRating=0;
+function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function formatDate(){const d=new Date();return `${String(d.getDate()).padStart(2,'0')}.${String(d.getMonth()+1).padStart(2,'0')}.${d.getFullYear()}`;}
+function renderStars(n){let h="";for(let i=1;i<=5;i++)h+=`<span class="star-display ${i<=n?'filled':''}">★</span>`;return h;}
+function parseDate(d){
+  // DD.MM.YYYY -> timestamp
+  try{
+    const parts=d.split('.');
+    if(parts.length===3) return new Date(parseInt(parts[2]), parseInt(parts[1])-1, parseInt(parts[0])).getTime();
+  }catch(e){}
+  return 0;
+}
+function render(){
+  const list=document.getElementById("v-list"),countEl=document.getElementById("v-count"),avgBox=document.getElementById("avg-box");
+  countEl.textContent=`${entries.length} viestiä`;
+  if(entries.length===0){list.innerHTML=`<div class="empty">Ei vielä viestejä - ole ensimmäinen! ✨<br><small style="color:#444">Kirjoita vasemmalle ja tallenna JSON GitHubiin</small></div>`;avgBox.style.display="none";return;}
+  const ratings=entries.filter(e=>e.rating>0).map(e=>e.rating);const avg=ratings.length?(ratings.reduce((a,b)=>a+b,0)/ratings.length):0;
+  if(ratings.length>0){avgBox.style.display="flex";document.getElementById("avg-text").textContent=avg.toFixed(1);document.getElementById("avg-count").textContent=`(${ratings.length} arvostelua)`;document.getElementById("avg-stars").innerHTML=renderStars(Math.round(avg));}else avgBox.style.display="none";
+  // UUSIN YLIMPÄNÄ: sorttaa päivämäärän mukaan laskevasti (uusin ensin)
+  const sorted=[...entries].sort((a,b)=>parseDate(b.date)-parseDate(a.date));
+  list.innerHTML="";sorted.forEach(e=>{const div=document.createElement("div");div.className="tiedote-item";div.innerHTML=`<div class="tiedote-date">${esc(e.date)}</div><div class="tiedote-title">${esc(e.name)} <span class="stars-display">${renderStars(e.rating||0)}</span></div><div class="tiedote-msg">${esc(e.message)}</div>`;list.appendChild(div);});
+}
+function updatePreview(){
+  const stats={count:entries.length,avg:entries.filter(e=>e.rating).length?Math.round((entries.filter(e=>e.rating).reduce((a,b)=>a+b.rating,0)/entries.filter(e=>e.rating).length)*10)/10:0,ratings:entries.filter(e=>e.rating).length};
+  const obj={entries,stats,updated:new Date().toISOString().slice(0,10)};
+  document.getElementById("json-preview").textContent=JSON.stringify(obj,null,2);document.getElementById("json-box").style.display="block";return JSON.stringify(obj,null,2);
+}
+async function loadJson(){try{const r=await fetch(`${JSON_PATH}?v=${Date.now()}`,{cache:"no-store"});if(r.ok){const j=await r.json();if(j.entries&&Array.isArray(j.entries))entries=j.entries;else if(Array.isArray(j))entries=j;}}catch(e){entries=[];}render();}
+const stars=document.querySelectorAll('.star-input'),label=document.getElementById('rating-label');
+stars.forEach(s=>{s.addEventListener('click',()=>{selectedRating=parseInt(s.dataset.val);stars.forEach(x=>x.classList.toggle('active',parseInt(x.dataset.val)<=selectedRating));const texts=["","Huono 😞","Kohtalainen 😐","Hyvä 🙂","Erittäin hyvä 😊","Huippu! 🤩"];label.textContent=texts[selectedRating];label.style.color="#ffcc00";});});
+document.getElementById("v-msg").addEventListener("input",e=>{document.getElementById("v-counter").textContent=e.target.value.length;});
+document.getElementById("v-send").addEventListener("click",()=>{
+  const name=document.getElementById("v-name").value.trim()||"Anonyymi",msg=document.getElementById("v-msg").value.trim();
+  if(msg.length<3){alert("Kirjoita vähintään 3 merkkiä");return;}if(selectedRating===0){alert("Valitse tähdet 1-5");return;}
+  const ne={date:formatDate(),name:name.slice(0,30),message:msg.slice(0,500),rating:selectedRating};entries.push(ne);render();updatePreview();
+  document.getElementById("v-name").value="";document.getElementById("v-msg").value="";document.getElementById("v-counter").textContent="0";selectedRating=0;stars.forEach(x=>x.classList.remove('active'));label.textContent="Valitse 1-5 tähteä";label.style.color="#666";
+});
+document.getElementById("btn-download").addEventListener("click",()=>{const txt=document.getElementById("json-preview").textContent;const blob=new Blob([txt],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="vieraskirja.json";a.click();URL.revokeObjectURL(url);});
+document.getElementById("btn-copy").addEventListener("click",async()=>{const txt=document.getElementById("json-preview").textContent;try{await navigator.clipboard.writeText(txt);document.getElementById("btn-copy").textContent="✓ KOPIOITU";setTimeout(()=>{document.getElementById("btn-copy").textContent="📋 KOPIOI"},1500);}catch(e){alert("Kopioi manuaalisesti");}});
+loadJson();
+</script>
+</body></html>

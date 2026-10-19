@@ -1,0 +1,11 @@
+{
+  "parent_id": "43119",
+  "child_courses": [
+    "44010",
+    "44763"
+  ],
+  "total_rounds_all_layouts": 60,
+  "unique_players_all_layouts": 24,
+  "fetched_at": "2026-10-19T06:29:42.313593+00:00",
+  "version": "V30 LIVE - parent kooste"
+}

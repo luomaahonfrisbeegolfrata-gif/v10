@@ -1,0 +1,37 @@
+{
+  "_readme": "Käsin ylläpidettävä lähdetieto. Muuta vain tätä tiedostoa; scripts/build_stats.py laskee siitä data/*.json. Kaikki arviot on merkitty.",
+  "as_of": "2026-10-19",
+  "course": {
+    "name": "Luoma-ahon Frisbeegolfrata",
+    "par": [4,3,3,3,3,3,3,3,4,3,5,4],
+    "length_m": [125,103,72,57,94,96,103,80,116,85,197,120]
+  },
+  "metres_per_step": 0.729,
+  "unique_players_manual": 133,
+  "unique_players_note": "Käsin arvioitu. Metrixin ja UDiscin pelaajia ei voi deduplikoida automaattisesti (eri tunnukset).",
+  "layouts": {
+    "metrix_44010": {"rounds": 619, "hole_plays_per_round": 1, "lap_equivalents": 1, "avg": [4.7,3.8,3.7,3.4,3.6,4.3,4.2,3.6,5.2,4.3,6.6,4.4]},
+    "metrix_44763": {"rounds": 130, "hole_plays_per_round": 2, "lap_equivalents": 2, "avg": [4.3,4.05,3.6,3.4,3.6,3.85,3.95,3.35,3.8,4.25,4.3,6.1]},
+    "metrix_48112": {"rounds": 19, "hole_plays_per_round": 1, "lap_equivalents": 1.5, "avg": [4.5,3.35,3.3,3.35,3.35,4.55,4.6,3.3,3.6,3.4,5.6,3.6]},
+    "udisc": {"hole_plays": [34,34,34,34,34,34,31,31,31,31,31,31], "lap_equivalents": 1, "avg": [4.26,3.77,3.25,3.31,3.5,3.95,3.84,3.25,4.17,3.67,5.79,4.05]}
+  },
+  "_layout_notes": "rounds = Metrix-kierrokset (käsin kuukausigraafeista). 44763 = 24 väylää (2 kierrosta/pelikerta), 48112 = 18 väylää. UDiscin väyläkeskiarvot perustuvat vain 31-34 pelikertaan (hole_plays), eivät 453 kierrokseen.",
+  "hole_in_one": {"4": 4, "8": 1},
+  "distribution_verified": false,
+  "distribution_note": "Jakauma (birdie/par/bogey...) on käsin syötetty eikä täsmää kierrosmääriin (väyläsummat 1143-1228). Korvaa oikealla datalla tai piilota rivit.",
+  "distribution": {
+    "birdie": [143,45,82,295,45,45,45,136,122,45,75,247],
+    "par0": [558,436,645,384,630,353,350,564,547,367,241,531],
+    "bogey": [328,484,312,343,358,525,527,329,349,529,506,279],
+    "dbl": [122,180,116,128,133,196,196,122,130,197,220,104],
+    "tpl": [38,56,36,40,41,61,61,38,40,61,69,32],
+    "other": [19,27,17,18,21,28,29,19,20,29,32,15]
+  },
+  "competitions": {
+    "user_agent": "luoma-aho-stats/1.0 (ratasivu; vaihda tähän yhteystieto)",
+    "manual_ids": ["3819613","3819645","3819646","3820197","3820198","3820199","3820200","3820202"],
+    "series": {"3819613": ["3819645","3819646","3820197","3820198","3820199","3820200","3820202"]},
+    "discover_courses": ["44010"],
+    "default_course": {"id": "44010", "name": "Luoma-aho"}
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "course_id": "luoma-ahon-frisbeegolfrata-YNEx",
+  "total_rounds": 453,
+  "total": 453,
+  "unique_players": 70,
+  "virkistystunnit": 630,
+  "peliaika": {
+    "display": "630h",
+    "hours": 630
+  },
+  "askeleet": {
+    "display": "1 344 654",
+    "count": 1344654
+  },
+  "askelten_maara": 1344654,
+  "updated": "19.10.2026 06.03 - Elinikäiset tilastot päivitetty kuvasta",
+  "source": "UDisc Elinikäiset tilastot - 453 kierrosta, 630h, 70 pelaajaa, 1 344 654 askelta - kuva 19.10.2026 06.03",
+  "fetched_at": "2026-10-19T06:03:00",
+  "version": "V6.1 - Päivitetty 19.10.2026 - 453 kierrosta (was 444)",
+  "locked": true,
+  "top10": [
+    {
+      "rank": 1,
+      "name": "@kantanen8",
+      "total": 35,
+      "plus_minus": "-6",
+      "plus": "-6",
+      "date": "4.7.2026"
+    },
+    {
+      "rank": 2,
+      "name": "@valkoparta",
+      "total": 36,
+      "plus_minus": "-5",
+      "plus": "-5",
+      "date": "6.7.2026"
+    },
+    {
+      "rank": 2,
+      "name": "@mattiasss",
+      "total": 36,
+      "plus_minus": "-5",
+      "plus": "-5",
+      "date": "19.8.2026"
+    },
+    {
+      "rank": 4,
+      "name": "@dashyy",
+      "total": 38,
+      "plus_minus": "-3",
+      "plus": "-3",
+      "date": "13.9.2025"
+    },
+    {
+      "rank": 4,
+      "name": "@itkonenjere",
+      "total": 38,
+      "plus_minus": "-3",
+      "plus": "-3",
+      "date": "29.4.2026"
+    },
+    {
+      "rank": 6,
+      "name": "@peetu7",
+      "total": 39,
+      "plus_minus": "-2",
+      "plus": "-2",
+      "date": "24.7.2026"
+    },
+    {
+      "rank": 6,
+      "name": "@kimmoke",
+      "total": 39,
+      "plus_minus": "-2",
+      "plus": "-2",
+      "date": "11.10.2026"
+    },
+    {
+      "rank": 8,
+      "name": "@taspak",
+      "total": 42,
+      "plus_minus": "+1",
+      "plus": "+1",
+      "date": "16.7.2026"
+    },
+    {
+      "rank": 9,
+      "name": "@adusti",
+      "total": 43,
+      "plus_minus": "+2",
+      "plus": "+2",
+      "date": "20.7.2026"
+    },
+    {
+      "rank": 10,
+      "name": "@tommivluoma",
+      "total": 47,
+      "plus_minus": "+6",
+      "plus": "+6",
+      "date": "8.8.2026"
+    }
+  ],
+  "previous": {
+    "total_rounds": 444,
+    "unique_players": 69,
+    "virkistystunnit": 618,
+    "askeleet": 1318270,
+    "updated": "13.10.2026"
+  },
+  "manual_only": true,
+  "automatic": false,
+  "note": "UDisc päivitetään VAIN käyttäjän antamasta Elinikäiset tilastot KUVASTA - ei automaattinen"
+}

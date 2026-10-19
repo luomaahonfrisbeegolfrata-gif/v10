@@ -1,0 +1,47 @@
+{
+  "total_rounds": 1221,
+  "total": 1221,
+  "count": 1221,
+  "metrix_total": 768,
+  "metrix_breakdown": {
+    "44010": 619,
+    "44763": 130,
+    "48112": 19
+  },
+  "udisc_total": 453,
+  "udisc_breakdown": {
+    "virkistystunnit": 630,
+    "askeleet": 1344654
+  },
+  "unique_players": 133,
+  "peliaika": {
+    "display": "1630h",
+    "hours": 1630
+  },
+  "askeleet": {
+    "display": "3 440 589",
+    "count": 3440589
+  },
+  "kilometrit": {
+    "display": "2508 km",
+    "km": 2508
+  },
+  "updated": "19.10.2026 04:20 - MANUAALINEN KUVISTA",
+  "fetched_at": "2026-10-19T11:20:19.447907+00:00",
+  "version": "V7.0 MANUAL - 1221 kierrosta (Metrix 768 + UDisc 453) - VAIN KUVISTA",
+  "source": "MANUAALINEN: Metrix 768 (kuvasta) + UDisc 453 (kuvasta) = 1221 - PÄIVITETTY VAIN KUVISTA",
+  "locked": true,
+  "manual_only": true,
+  "automatic": false,
+  "note": "Total rounds EI AUTOMAATTINEN - päivitetään VAIN käyttäjän antamista Metrix ja UDisc kuvista",
+  "calculation": {
+    "method": "MANUAALINEN KUVISTA: Metrix {'44010': 619, '44763': 130, '48112': 19} = 768 + UDisc 453 = 1221",
+    "total_rounds": 1221,
+    "source": "KUVAT: Metrix kuvaruutukaappaus + UDisc Elinikäiset tilastot kuva"
+  },
+  "previous": {
+    "total_rounds": 1221,
+    "metrix_total": 768,
+    "udisc_total": 453
+  }
+}

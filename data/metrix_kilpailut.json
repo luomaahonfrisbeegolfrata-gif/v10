@@ -1,0 +1,146 @@
+{
+  "courses": [
+    {
+      "id": "44010",
+      "name": "Luoma-ahon Frisbeegolfrata",
+      "url": "https://discgolfmetrix.com/course/44010",
+      "layout": "Vaylaopaste"
+    },
+    {
+      "id": "44763",
+      "name": "Luoma-ahon Frisbeegolfrata",
+      "url": "https://discgolfmetrix.com/course/44763",
+      "layout": "Vaylaopaste x2"
+    },
+    {
+      "id": "45536",
+      "name": "Luoma-ahon Frisbeegolfrata",
+      "url": "https://discgolfmetrix.com/course/45536",
+      "layout": "18"
+    },
+    {
+      "id": "48112",
+      "name": "Luoma-ahon Frisbeegolfrata",
+      "url": "https://discgolfmetrix.com/course/48112",
+      "layout": "Talvi"
+    }
+  ],
+  "kilpailut": [
+    {
+      "date": "07.11 - 19.12.2026",
+      "name": "PAKKASSARJA KOKO SARJA - 4 parasta 7:stä",
+      "course": "44010",
+      "courseName": "Luoma-aho",
+      "competitionId": "3819613",
+      "id": "3819613",
+      "type": "Sarja",
+      "url": "https://discgolfmetrix.com/3819613",
+      "reg": "Avoinna",
+      "registration": "Avoinna",
+      "players": 1,
+      "active": true,
+      "isSeries": true
+    },
+    {
+      "date": "07.11.2026 12:00",
+      "name": "PAKKASSARJA #1 - 7.11",
+      "course": "44010",
+      "courseName": "Luoma-aho",
+      "competitionId": "3819645",
+      "id": "3819645",
+      "type": "Viikkokisa",
+      "url": "https://discgolfmetrix.com/3819645",
+      "reg": "Avoinna",
+      "registration": "Avoinna",
+      "players": 1,
+      "active": true
+    },
+    {
+      "date": "14.11.2026 12:00",
+      "name": "PAKKASSARJA #2 - 14.11",
+      "course": "44010",
+      "courseName": "Luoma-aho",
+      "competitionId": "3819646",
+      "id": "3819646",
+      "type": "Viikkokisa",
+      "url": "https://discgolfmetrix.com/3819646",
+      "reg": "Avoinna",
+      "registration": "Avoinna",
+      "players": 0,
+      "active": true
+    },
+    {
+      "date": "21.11.2026 12:00",
+      "name": "PAKKASSARJA #3 - 21.11",
+      "course": "44010",
+      "courseName": "Luoma-aho",
+      "competitionId": "3820197",
+      "id": "3820197",
+      "type": "Viikkokisa",
+      "url": "https://discgolfmetrix.com/3820197",
+      "reg": "Avoinna",
+      "registration": "Avoinna",
+      "players": 0,
+      "active": true
+    },
+    {
+      "date": "28.11.2026 12:00",
+      "name": "PAKKASSARJA #4 - 28.11",
+      "course": "44010",
+      "courseName": "Luoma-aho",
+      "competitionId": "3820198",
+      "id": "3820198",
+      "type": "Viikkokisa",
+      "url": "https://discgolfmetrix.com/3820198",
+      "reg": "Tulossa",
+      "registration": "Tulossa",
+      "players": 0,
+      "active": true
+    },
+    {
+      "date": "05.12.2026 12:00",
+      "name": "PAKKASSARJA #5 - 5.12",
+      "course": "44010",
+      "courseName": "Luoma-aho",
+      "competitionId": "3820199",
+      "id": "3820199",
+      "type": "Viikkokisa",
+      "url": "https://discgolfmetrix.com/3820199",
+      "reg": "Tulossa",
+      "registration": "Tulossa",
+      "players": 0,
+      "active": true
+    },
+    {
+      "date": "12.12.2026 12:00",
+      "name": "PAKKASSARJA #6 - 12.12",
+      "course": "44010",
+      "courseName": "Luoma-aho",
+      "competitionId": "3820200",
+      "id": "3820200",
+      "type": "Viikkokisa",
+      "url": "https://discgolfmetrix.com/3820200",
+      "reg": "Tulossa",
+      "registration": "Tulossa",
+      "players": 0,
+      "active": true
+    },
+    {
+      "date": "19.12.2026 12:00",
+      "name": "PAKKASSARJA #7 - 19.12 FINALE",
+      "course": "44010",
+      "courseName": "Luoma-aho",
+      "competitionId": "3820202",
+      "id": "3820202",
+      "type": "Finaali",
+      "url": "https://discgolfmetrix.com/3820202",
+      "reg": "Tulossa",
+      "registration": "Tulossa",
+      "players": 0,
+      "active": true
+    }
+  ],
+  "updated": "15.10.2026 22:47 - sarja ylimpänä, 07.11->19.12 nouseva, loppuneet poistuu",
+  "source": "Käsin ylläpidetty; korvautuu scripts/metrix_competitions.py:n datalla",
+  "version": "V2.0-clean"
+}

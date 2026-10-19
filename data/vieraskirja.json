@@ -1,0 +1,49 @@
+{
+  "entries": [
+    {
+      "date": "11.10.2026",
+      "name": "@kimmoke",
+      "message": "Mukava rata pelata, joten kannattaa käydä katsastamassa. Vähän märkää oli, mikä ei yllättänyt tähän aikaan vuodesta. Par neloset ja vitonen aika lyhkäisiä par lukemaan nähden ja helppo birdittää, jos pysyy OB tikkujen sisällä. Useampi tiipaiika olisi saanut olla pidempi. Hyvää työtä talkooporukalla tehty",
+      "rating": 4
+    },
+    {
+      "date": "01.10.2026",
+      "name": "Vieras Alajärveltä",
+      "message": "Eka kierros täällä, tykkäsin tosi paljon. Selkeät opasteet ja siisti metsä.",
+      "rating": 5
+    },
+    {
+      "date": "08.08.2026",
+      "name": "@tommivluoma",
+      "message": "Väkisin vaikeaksi tehty, toki pari normaalia väylääkin löytyy. Tiit liian lyhyitä 120m heitoille. Rata voi olla vaikea ja mieluisa, mutta tämä rata ei mieluisa ole.",
+      "rating": 3
+    },
+    {
+      "date": "11.07.2026",
+      "name": "@kajaste",
+      "message": "Oikein hauska metsärata. Hyvä lisä alueen tarjontaan. Osa väylistä hyvinkin vaativia, mutta ei mielestäni epäreiluja tai mitenkään sattumanvaraisia. Tarkkaa heittoa ja monipuolisuutta kaivataan. Ratamestari pitää aluskasvillisuuden hyvin kurissa. Ei tarvinnut juuri kiekkoa etsiä.",
+      "rating": 5
+    },
+    {
+      "date": "10.06.2026",
+      "name": "Jani Toivonen",
+      "message": "Olimme Heikin (Saunanen) kanssa positiivisesti yllättyneitä radasta. Rata oli paljon parempi mitä odotimme ja kuvista päättelimme. Oletus oli lähties et saadaan koettua uus rata mut uudestaan tuskin tullaan, mutta kyllä jos siellä on liikkeellä niin varmasti pysähdyn heitolle. Iso kiitos ja arvostus meiltä molemmilta että on intoa ja halua tehdä lajin eteen työtä. Rata oli loistava en malta odottaa että saat sinne lisää väyliä.",
+      "rating": 5
+    },
+    {
+      "date": "18.11.2025",
+      "name": "@onnnisillapaa",
+      "message": "Tarkkoja heittoja vaativa mutta ei niin pitkiä,hyvä rata.",
+      "rating": 4
+    }
+  ],
+  "stats": {
+    "count": 6,
+    "avg": 4.3,
+    "ratings": 6
+  },
+  "updated": "2026-10-13",
+  "locked": true,
+  "version": "V5.3.2 - 6 viestiä, Jani Toivonen 10.06.2026 lisätty",
+  "note": "Lukittu 13.10.2026 - UDisc ja Vieraskirja molemmat lukittu V5.1"
+}

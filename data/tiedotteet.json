@@ -1,0 +1,30 @@
+{
+  "tiedotteet": [
+    {
+      "date": "2026-10-15",
+      "title": "Tulossa talvisarja",
+      "message": "Marraskuun 7pv starttaa pakkassarja aina lauantaisin klo 12.00 jatkuen 19.12 asti. Stay tune!",
+      "type": "Kilpailu"
+    },
+    {
+      "date": "2026-10-09",
+      "title": "Syyskausi",
+      "message": "Maasto on todella märkää viikkojen rankkasateiden jälkeen, muuten huippukunnossa.",
+      "type": "info"
+    },
+    {
+      "date": "2026-10-08",
+      "title": "Väylä 6 muutos",
+      "message": "Oikean puoleinen OB poistettu. Väyläopaste on vielä vaihtamatta. Seurataan tulosten kehittymistä",
+      "type": "info"
+    },
+    {
+      "date": "2026-10-08",
+      "title": "Väylä 10 muutos",
+      "message": "Mandoa siirretty 3m oikealle. Seurataan tulosten kehittymistä",
+      "type": "info"
+    }
+  ],
+  "fetched_at": "2026-10-19T06:03:00",
+  "version": "V1.0 LOCKED - korjattu date 2026-15-10 -> 2026-10-15"
+}

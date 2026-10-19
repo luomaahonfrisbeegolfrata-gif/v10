@@ -1,0 +1,44 @@
+{
+  "version": "V1.0 LOCKED - Automaatioarkkitehtuuri",
+  "date": "2026-10-19",
+  "locked": true,
+  "architecture": {
+    "single_source": "config.json",
+    "builders": [
+      "scripts/build_stats.py",
+      "scripts/metrix_competitions.py",
+      "scripts/tiedotteet_fetcher.py"
+    ],
+    "removed_duplicates": [
+      "kierrokset.py",
+      "metrix_fetcher.py",
+      "metrix_tilanne_fetcher.py",
+      "vaylatilasto_fetcher.py",
+      "vaylatilasto_updater.py",
+      "udisc_image_parser.py",
+      "udisc_fetcher.py"
+    ],
+    "manual": [
+      "config.json layouts.rounds",
+      "data/udisc.json kuvasta",
+      "data/tiedotteet.json"
+    ],
+    "auto": [
+      "data/metrix_kilpailut.json",
+      "data/kilpailu_tilanne.json",
+      "data/kierrokset.json",
+      "data/vaylatilasto.json"
+    ],
+    "github_free_compliant": true,
+    "cron": "*/30 * * * *",
+    "runtime_per_run": "<1min",
+    "monthly_minutes": "1440 < 2000"
+  },
+  "data": {
+    "kierrokset": "1221 MANUAL - Metrix 768 + UDisc 453",
+    "vaylatilasto": "Tot 100% - 1221 per väylä, Tot 14652",
+    "kilpailut": "7 kisaa 7.11-19.12 + sarja, ei duplikaatteja",
+    "tiedotteet_date_fix": "2026-15-10 -> 2026-10-15",
+    "sponsorit_removed": true
+  }
+}

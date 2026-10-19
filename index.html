@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="fi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Luoma-ahon Frisbeegolfrata</title>
+<style>
+:root{--bg:#070708;--card:#151515;--border:#242424;--green:#1aff1a}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:#fff;font-family:Inter,system-ui,sans-serif;overflow-x:hidden;overflow-y:auto}
+header{height:56px;min-height:56px;max-height:56px;background:#0f0f0f;border-bottom:1px solid #242424;display:flex;align-items:center;justify-content:space-between;padding:0 12px;position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:-0.1px;line-height:1}.brand-logo{width:35px;height:35px;background:#fff;border-radius:50%;overflow:hidden;display:grid;place-items:center;flex-shrink:0}
+.header-icons{display:flex;gap:6px;align-items:center;flex-wrap:nowrap;flex-shrink:0}
+.wrap{max-width:1920px;margin:0 auto;padding:10px}
+.grid-top{display:grid;grid-template-columns:260px 200px 200px 200px 260px 260px;gap:10px} /* LUKITTU - ÄLÄ SIIRRÄ */
+.grid-mid{display:grid;grid-template-columns:260px 260px 260px 260px 350px;gap:10px;margin-top:10px}
+.grid-bottom{display:grid;grid-template-columns:1fr;margin-top:10px;width:100%;min-width:100%}
+.card{background:#151515;border:1px solid #242424;border-radius:10px;padding:10px 12px;overflow:hidden;height:320px;min-height:320px;max-height:320px;display:flex;flex-direction:column;width:260px;min-width:260px;max-width:260px}
+.card-mid{height:380px;min-height:380px;max-height:380px;width:260px;min-width:260px;max-width:260px}
+.card-bottom{height:500px!important;min-height:500px!important;max-height:500px!important;padding:0!important;overflow:visible!important;width:100%!important;min-width:100%!important;max-width:100%!important;display:flex!important;flex-direction:column!important}
+#c-midstack{grid-column:4;display:flex;flex-direction:column;gap:10px;height:320px;width:200px!important;min-width:200px!important;max-width:200px!important}
+#c-midstack .mini{flex:1;background:#151515;border:1px solid #242424;border-radius:10px;padding:10px;display:flex;flex-direction:column;justify-content:center;align-items:center;width:200px!important;min-width:200px!important;max-width:200px!important}
+.bullet{font-size:11px;color:#e0e0e0;margin:4px 0;display:flex;gap:6px;line-height:1.4;font-weight:500;letter-spacing:0.1px}
+.bullet::before{content:"•";color:#1aff1a;font-weight:900}
+.big-num{font-size:44px;font-weight:900;text-align:center;margin:8px 0}.label{font-size:11px;color:#888;text-transform:uppercase;text-align:center;font-weight:700}.divider{height:1px;background:#242424;margin:10px 0}
+.vayla-big{font-size:42px;font-weight:900;text-align:center}.vayla-green{color:#1aff1a;font-size:13px;font-weight:800;text-align:center;margin:6px 0}.vayla-name{font-size:12px;text-align:center;color:#ddd;margin:3px 0}
+.mini-label{font-size:10px;color:#888;text-transform:uppercase;font-weight:700}.mini-val{font-size:20px;font-weight:900;margin-top:4px}
+.top10-title{font-size:11px;color:#aaa;display:flex;justify-content:space-between;padding:6px 8px;border-bottom:1px solid #222}.top10-title b{color:#1aff1a}
+.toplist{flex:1;overflow:hidden;display:flex;flex-direction:column}.trow{display:flex;align-items:center;padding:5px 8px;font-size:12px;border-bottom:1px solid #1c1c1c;min-height:32px}
+.rank{width:22px;color:#1aff1a;font-weight:700}.name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.score{width:30px;text-align:right;font-weight:700}.plus{width:28px;text-align:right;font-weight:700;font-size:11px}.neg{color:#1aff1a}.pos{color:#ff4d4d}
+.vayla-header{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#111;border-bottom:1px solid #242424;flex-shrink:0}
+.vayla-header h3{margin:0;font-size:11px;color:#fff;letter-spacing:0.5px}.live-badge{background:#1aff1a;color:#000;font-size:10px;font-weight:800;padding:3px 10px;border-radius:12px;flex-shrink:0}
+.vayla-table-wrap{flex:1;overflow:auto!important;background:#0a0a0a}
+table.vayla{width:100%;border-collapse:collapse;table-layout:fixed;font-size:12px;min-width:960px}
+table.vayla th{background:#222;color:#fff;padding:8px 4px;text-align:center;border:1px solid #2a2a2a;min-width:60px;position:sticky;top:0;z-index:3}
+table.vayla th:first-child{min-width:110px;text-align:left;padding-left:12px;left:0;z-index:4}
+table.vayla td{padding:6px 4px;text-align:center;border:1px solid #1e1e1e;background:#0a0a0a}
+table.vayla td:first-child{text-align:left;padding-left:12px;background:#111;position:sticky;left:0;z-index:2;font-weight:700}
+.cell-red{background:#e5534b!important;color:#000!important;font-weight:700}.cell-yellow{background:#ffeb3b!important;color:#000!important;font-weight:700}.cell-green{background:#66bb6a!important;color:#000!important;font-weight:700}.cell-orange{background:#ff9800!important;color:#000!important;font-weight:700}.cell-dark{background:#222!important;color:#888!important}
+.wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.grid-top,.grid-mid{width:max-content;min-width:100%}
+header{overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}header::-webkit-scrollbar{display:none}
+.grid-top .card:nth-child(2){width:200px!important;min-width:200px!important;max-width:200px!important}
+.grid-top .card:nth-child(3){width:200px!important;min-width:200px!important;max-width:200px!important}
+@media (max-width:768px){
+  body{overflow-y:auto!important}
+  .wrap{overflow-x:hidden!important;overflow-y:visible!important;width:100%!important;padding:10px!important}
+  .grid-top{grid-template-columns:1fr 1fr!important;width:100%!important;min-width:100%!important;gap:10px!important}
+  .grid-mid{grid-template-columns:1fr!important;width:100%!important;min-width:100%!important;gap:10px!important}
+  .grid-bottom{width:100%!important;min-width:100%!important}
+  /* Oletus: kaikki kortit 100% solustaan */
+  .card{width:100%!important;min-width:100%!important;max-width:100%!important;height:320px!important}
+  #card-foreca{height:160px!important;min-height:160px!important;max-height:160px!important}
+  #card-foreca #foreca-stack{width:260px;min-width:260px;max-width:260px;height:320px;display:flex;flex-direction:column;gap:10px}
+#foreca-daily-weather-myv4o8kfvQ{height:160px!important;min-height:160px!important;max-height:160px!important}
+  .card-mid{width:100%!important;min-width:100%!important;max-width:100%!important;height:380px!important}
+  .card-bottom{width:100%!important;min-width:100%!important;max-width:100%!important;height:500px!important;min-height:500px!important}
+  /* 1. bullet-lista koko rivin levyinen */
+  .grid-top .card:nth-child(1){grid-column:1 / -1}
+  /* 2. ja 3. KIERROKSET + HIO rinnakkain 50% + 50% = koko näytön leveys */
+  .grid-top .card:nth-child(2),
+  .grid-top .card:nth-child(3){width:100%!important;min-width:100%!important;max-width:100%!important}
+  /* 4. stack koko rivin levyinen, mini-kortit rinnakkain */
+  #c-midstack{grid-column:1 / -1!important;width:100%!important;min-width:100%!important;max-width:100%!important;height:auto!important;display:flex!important;flex-direction:row!important;gap:10px!important}
+  #foreca-stack{grid-column:1 / -1!important;width:100%!important;min-width:100%!important;max-width:100%!important;height:auto!important;display:flex!important;flex-direction:column!important;gap:10px!important}
+  #foreca-stack #card-foreca{width:100%!important;min-width:100%!important;max-width:100%!important;height:160px!important;min-height:160px!important;max-height:160px!important}
+  #foreca-stack #card-foreca-extra{width:100%!important;min-width:100%!important;max-width:100%!important;height:150px!important;min-height:150px!important;max-height:150px!important}
+  #foreca-stack #card-tilanne{display:none!important}
+  #c-midstack .mini{width:100%!important;min-width:0!important;max-width:100%!important;height:80px!important;min-height:80px!important;flex:1}
+  /* 5. ja 6. tiedotteet + sää koko rivin levyiset */
+  .grid-top .card:nth-child(5),
+  .grid-top .card:nth-child(6){grid-column:1 / -1;width:100%!important;min-width:100%!important;max-width:100%!important}
+
+  #card-tilanne{width:100%!important;min-width:100%!important;max-width:100%!important;height:380px!important}
+
+}
+.tiedote-item{padding:8px;border-bottom:1px solid #1e1e1e}
+.tiedote-date{font-size:9px;color:#666;font-weight:700}
+.tiedote-title{font-size:12px;font-weight:800;color:#fff;margin:3px 0}
+.tiedote-msg{font-size:11px;color:#bbb;line-height:1.3;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.tiedote-list{flex:1;overflow-y:auto;overflow-x:hidden}
+.tiedote-list::-webkit-scrollbar{width:4px}
+.tiedote-list::-webkit-scrollbar-thumb{background:#333;border-radius:2px}
+#card-foreca{
+  width:260px!important;min-width:260px!important;max-width:260px!important;
+  height:320px!important;min-height:320px!important;max-height:320px!important;
+  padding:0!important;overflow:hidden!important;border-radius:10px!important;
+  background:#151515!important;border:1px solid #242424!important;
+  display:flex!important;flex-direction:column!important;position:relative!important;
+}
+#foreca-stack{width:260px;min-width:260px;max-width:260px;height:320px;display:flex;flex-direction:column;gap:10px}
+#foreca-daily-weather-myv4o8kfvQ{
+  width:260px!important;min-width:260px!important;max-width:260px!important;
+  height:320px!important;min-height:320px!important;max-height:320px!important;
+  overflow-y:auto!important;overflow-x:hidden!important;
+  border-radius:10px!important;display:block!important;flex:1!important;
+}
+#card-foreca{
+  height:160px!important;min-height:160px!important;max-height:160px!important;
+  width:260px!important;min-width:260px!important;max-width:260px!important;
+  overflow:hidden!important;
+}
+#card-foreca #foreca-stack{width:260px;min-width:260px;max-width:260px;height:320px;display:flex;flex-direction:column;gap:10px}
+#foreca-daily-weather-myv4o8kfvQ{
+  height:160px!important;min-height:160px!important;max-height:160px!important;
+}
+#foreca-daily-weather-myv4o8kfvQ::-webkit-scrollbar{width:4px}
+#foreca-daily-weather-myv4o8kfvQ::-webkit-scrollbar-thumb{background:#333;border-radius:2px}
+
+/* Metrix kilpailut kortti */
+.kilpailu-item{padding:7px 8px;border-bottom:1px solid #1e1e1e;display:flex;flex-direction:column;gap:2px}
+.kilpailu-date{font-size:9px;color:#1aff1a;font-weight:800;letter-spacing:0.3px}
+.kilpailu-name{font-size:11px;color:#fff;font-weight:800;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kilpailu-meta{font-size:9px;color:#888;display:flex;gap:6px;align-items:center}
+.kilpailu-course{font-size:9px;color:#aaa;background:#222;padding:2px 6px;border-radius:10px;font-weight:700}
+.kilpailu-link{font-size:9px;color:#1aff1a;text-decoration:none;font-weight:700}
+.kilpailu-empty{padding:20px 12px;text-align:center;color:#666;font-size:11px;line-height:1.4}
+
+
+/* Kilpailun tilanne kortti */
+.tilanne-item{padding:5px 8px;border-bottom:1px solid #1e1e1e;display:flex;align-items:center;gap:6px;font-size:11px}
+.tilanne-rank{width:22px;color:#1aff1a;font-weight:800;flex-shrink:0}
+.tilanne-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700;color:#fff}
+.tilanne-score{width:32px;text-align:right;font-weight:800;color:#fff}
+.tilanne-plus{width:32px;text-align:right;font-size:10px;font-weight:700}
+.tilanne-empty{padding:20px 12px;text-align:center;color:#666;font-size:11px;line-height:1.4}
+.tilanne-header{font-size:9px;color:#888;padding:4px 8px;background:#111;border-bottom:1px solid #222;display:flex;justify-content:space-between}
+
+</style></head><body>
+<header><div class="brand"><div class="brand-logo"><img src="logot/l-a-friba-logo.jpg" alt="L-A FRIBA" style="width:35px;height:35px;object-fit:cover;display:block" /></div> Luoma-ahon Frisbeegolfrata</div><div class="header-icons"><a href="./palkintolaskuri.html" style="width:71px;height:35px;min-width:71px;background:#111;border:1px solid #1aff1a88;border-radius:8px;overflow:hidden;display:grid;place-items:center;text-decoration:none;margin-right:6px" title="Palkintolaskuri"><img src="logot/1000mrkkaa-70x35.jpg" alt="1000" style="width:71px;height:35px;object-fit:cover;display:block"/></a>
+<a href="https://www.google.com/maps/place/Luoma-ahon+Frisbeegolfrata/@63.0901676,23.8860139,12z/" target="_blank" title="Google Maps" style="width:35px;height:35px;min-width:35px;background:#fff;border-radius:8px;display:grid;place-items:center;overflow:hidden;border:1px solid #333;flex-shrink:0"><img src="logot/gmaps-logo.jpg" alt="Maps" style="width:100%;height:100%;object-fit:cover;display:block" /></a>
+<a href="https://discgolfmetrix.com/course/44010" target="_blank" title="Metrix 70px" style="width:70px;height:35px;min-width:70px;background:#ff6a00;border-radius:8px;display:grid;place-items:center;overflow:hidden;border:1px solid #333;flex-shrink:0"><img src="logot/metrix-logo.png" alt="Metrix" style="width:100%;height:100%;object-fit:contain;display:block;background:#ff6a00" /></a>
+<a href="https://photos.google.com/share/AF1QipPwBhzcZ3Nf0BEpLICSkhQSFIuTA1VO3i1W_u0l_4oY_ZfytXxa21wqxIx4RqRepA" target="_blank" title="Väyläopasteet" style="width:70px;height:35px;min-width:70px;background:#0a2e1f;border-radius:8px;display:grid;place-items:center;overflow:hidden;border:1px solid #333;flex-shrink:0"><img src="logot/parkdly-logo.png" alt="parkdly" style="width:100%;height:100%;object-fit:cover;display:block" /></a>
+<a href="https://photos.google.com/share/AF1QipNfClPGrg-CMqrUn9w9qeso7oFvZzjTO-kmUuy3NWf9o06lgy1TohSBSykLkaW-vw" target="_blank" title="Löytökiekot" style="width:90px;height:35px;min-width:90px;background:#fff;border-radius:8px;display:grid;place-items:center;overflow:hidden;border:1px solid #333;flex-shrink:0"><img src="logot/loytokiekot-logo.png" alt="Löytökiekot" style="width:100%;height:100%;object-fit:contain;display:block;background:#fff" /></a>
+<a href="https://luomaahonfrisbeegolfrata-gif.github.io/ratamestari-palvelu/" target="_blank" title="Ratamestari" style="width:35px;height:35px;min-width:35px;background:#0a2e1f;border-radius:8px;display:grid;place-items:center;overflow:hidden;border:1px solid #333;flex-shrink:0"><img src="logot/ratamestari-logo.png" alt="Ratamestari" style="width:100%;height:100%;object-fit:cover;display:block" /></a>
+<a href="https://youtu.be/ewQ-m-BU6SI" target="_blank" title="YouTube" style="width:70px;height:35px;min-width:70px;background:#fff;border-radius:8px;display:grid;place-items:center;overflow:hidden;border:1px solid #333;flex-shrink:0"><img src="logot/yt-logo.png" alt="YouTube" style="width:100%;height:100%;object-fit:contain;display:block;background:#fff" /></a>
+<a href="https://udisc.com/courses/luoma-ahon-frisbeegolfrata-YNEx" target="_blank" title="UDisc" style="width:35px;height:35px;min-width:35px;background:#fff;border-radius:8px;display:grid;place-items:center;overflow:hidden;border:1px solid #333;flex-shrink:0"><img src="logot/udisc-logo.png" alt="UDisc" style="width:100%;height:100%;object-fit:cover;display:block" /></a>
+<a href="https://www.instagram.com/62830_frisbeegolfrata" target="_blank" title="Instagram" style="width:35px;height:35px;min-width:35px;background:#fff;border-radius:8px;display:grid;place-items:center;overflow:hidden;border:1px solid #333;flex-shrink:0"><img src="logot/instagram-logo.png" alt="Instagram" style="width:100%;height:100%;object-fit:cover;display:block" /></a>
+<a href="https://frisbeegolfradat.fi/rata/luoma-ahon-frisbeegolfrata/" target="_blank" title="FGR" style="width:35px;height:35px;min-width:35px;background:#fff;border-radius:8px;display:grid;place-items:center;overflow:hidden;border:1px solid #333;flex-shrink:0"><img src="logot/fgr-logo.png" alt="FGR" style="width:100%;height:100%;object-fit:cover;display:block" /></a>
+<a href="https://photos.google.com/share/AF1QipMlPCtWvfCrBkzBR-Sr-W7AG-f8ZBVQ0omErEqR-ZXVPqF-2uRionKk12oTV4R_Lw?key=VzR6XzJiU2dFa0RldW5NcHgxUW5weTVEbk1pYUdB" target="_blank" title="Rata-kuvat" style="width:70px;height:35px;min-width:70px;background:#fff;border-radius:8px;display:grid;place-items:center;overflow:hidden;border:1px solid #333;flex-shrink:0"><img src="logot/rata-kuvat-icon.jpg" alt="Rata-kuvat" style="width:100%;height:100%;object-fit:cover;display:block" /></a>
+</div></header>
+<div class="wrap">
+<div class="grid-top">
+<div class="card"><div class="bullet">Kallioisessa mäntymetsä maastossa</div><div class="bullet">Kompaktiin pakettiin suunniteltu ja toteutettu</div><div class="bullet">Huippu kuntoinen metsärata</div><div class="bullet">BB1 papereissa, A1 pituudessa, AA1 teknisyyksessä</div><div class="bullet">Vaylat 57 - 197m teknisiä ja kiekko kontrollia vaativia</div><div class="bullet">Tarkkuus, oikea kiekko ja heittovalinnat avainasemassa onnistumiseen</div><div class="bullet">Mukava rata kiertää joka soveltuu kaikille iästä ja taitotasosta riippumatta</div><div class="bullet">Korkeuserot, rehelliset selkeät linjat</div><div class="bullet">Kierros noin 1.5km peliaika noin tunti</div><div class="bullet">OB:t ja Mandot haastavat pelaajan päätöksentekoa</div></div>
+<div class="card"><div class="label">Metrix & UDisc tuloskirjattujen kierrosten määrä</div><div class="big-num" id="v-kierrokset">1221</div><div class="divider"></div><div class="label">Uniikit pelaajat</div><div class="big-num" style="font-size:36px" id="v-unique">133</div></div>
+<div class="card" style="width:200px;min-width:200px;max-width:200px"><div class="label">Hole in One</div><div class="vayla-big">5</div><div class="vayla-green">Väylä 4</div><div class="vayla-name">Benjamin Turja</div><div class="vayla-name">Julius Luoma-aho</div><div class="vayla-name">Juha Luoma-aho</div><div class="vayla-name">Aleksi Lassila</div><div class="vayla-green" style="margin-top:12px">Väylä 8</div><div class="vayla-name">Pentti Pitkäranta</div></div>
+<div id="c-midstack"><div class="mini"><div class="mini-label">Peliaika</div><div class="mini-val" id="v-peliaika">1630h</div></div><div class="mini"><div class="mini-label">Askelmäärä</div><div class="mini-val" id="v-askel">3 440 589</div></div><div class="mini"><div class="mini-label">Kilometrit</div><div class="mini-val" id="v-km">2508 km</div></div></div>
+<div class="card"><div class="top10-title"><span>TIEDOTTEET</span><b id="tiedote-badge">LIVE</b></div><div class="tiedote-list" id="list-tiedotteet"></div></div>
+<div id="foreca-stack" style="width:260px;min-width:260px;max-width:260px;height:320px;display:flex;flex-direction:column;gap:10px">
+<div class="card" id="card-foreca" style="height:160px;min-height:160px;max-height:160px;width:260px;min-width:260px;max-width:260px">
+  <div id="foreca-daily-weather-myv4o8kfvQ" data-forecawidget="foreca-daily-weather" data-theme="dark" data-widgetid="myv4o8kfvQ" data-locationid="100647416" data-windunit="ms" data-tempunit="C" data-rainunit="mm" data-language="fi">
+    <script defer data-cfasync="false" type="text/javascript" src="https://www.forecabox.com/dist/daily.min.js" onload="loadDaily('myv4o8kfvQ')"></script>
+    <a id="foreca-attribution-myv4o8kfvQ" href="https://www.foreca.com/" rel="noopener" target="_blank" style="position: relative; bottom: 0px; left: 5px;">
+      <img alt="Weather by Foreca" src="https://www.foreca.com/public/images/logo/black.svg" width="80" height="12" style="margin-top: 8px; padding: 2px; border-radius: 2px; background-color: #ffffffaa;" />
+    </a>
+  </div>
+</div>
+<div class="card" id="card-foreca-extra" style="height:150px;min-height:150px;max-height:150px;width:260px;min-width:260px;max-width:260px;padding:12px;display:flex;flex-direction:column;justify-content:space-between;background:#151515;border:1px solid #242424;border-radius:10px">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <div style="font-size:10px;color:#888;font-weight:700;letter-spacing:0.5px">RATA STATUS</div>
+    <div style="display:flex;align-items:center;gap:4px"><div style="width:6px;height:6px;background:#1aff1a;border-radius:50%;box-shadow:0 0 6px #1aff1a"></div><span style="font-size:9px;color:#1aff1a;font-weight:800">AVOINNA</span></div>
+  </div>
+  <div style="text-align:center;margin:4px 0">
+    <div style="font-size:11px;color:#fff;font-weight:800" id="extra-vieraskirja">⭐ 0.0/5 (0 arviota)</div>
+    <div style="font-size:9px;color:#666;margin-top:2px" id="extra-vieraskirja-viimeisin">Ei vielä arvosteluja</div>
+  </div>
+  <a href="./vieraskirja.html" style="display:flex;align-items:center;justify-content:center;gap:6px;width:100%;height:35px;background:#1aff1a;color:#000;border-radius:8px;font-size:12px;font-weight:800;text-decoration:none;letter-spacing:0.2px">📖 VIERASKIRJA</a>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+<div class="grid-mid">
+<div class="card card-mid"><div class="top10-title"><span>METRIX 44010 TOP 10</span><b>44010 ↗</b></div><div class="toplist" id="list-44010"></div></div>
+<div class="card card-mid"><div class="top10-title"><span>METRIX 44763 TOP 10</span><b>44763 ↗</b></div><div class="toplist" id="list-44763"></div></div>
+<div class="card card-mid"><div class="top10-title"><span>UDISC TOP 10</span><b>UDisc ↗</b></div><div class="toplist" id="list-udisc"></div></div>
+<div class="card card-mid" id="card-kilpailut"><div class="top10-title"><span>METRIX KILPAILUT</span><b id="kilpailut-badge">LIVE</b></div><div class="toplist" id="list-kilpailut" style="overflow-y:auto"><div class="kilpailu-empty">Ei aktiivisia kilpailuja<br><span style="font-size:9px;color:#555">Uusin aina ylimpänä<br>Loppuneet poistuu automaattisesti</span></div></div></div>
+<div class="card card-mid" id="card-tilanne" style="width:350px;min-width:350px;max-width:350px;height:380px;min-height:380px;max-height:380px"><div class="top10-title"><span>KILPAILUN TILANNE</span><b id="tilanne-badge">0</b></div><div class="tilanne-header"><span id="tilanne-competition-name">Pakkassarja</span><span id="tilanne-competition-time">2026-11-07</span></div><div class="toplist" id="list-tilanne" style="overflow-y:auto"><div class="tilanne-empty">Ei tuloksia vielä<br>Pakkassarja</div></div></div>
+</div>
+
+<div class="grid-bottom"><div class="card card-bottom" id="card-vayla"><div class="vayla-header"><h3>VÄYLÄTILASTO - LIVE</h3><div class="live-badge" id="vayla-badge">● LIVE</div></div><div class="vayla-table-wrap" id="vayla-wrap"><table class="vayla"><thead><tr><th>Vayla</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>Tot</th><th>%</th></tr></thead><tbody id="vayla-body"></tbody></table></div></div></div>
+</div>
+<script>
+const LOCKED_PAR = ["4","3","3","3","3","3","3","3","4","3","5","4","41","-"];
+const LOCKED_PITUUS = ["125m","103m","72m","57m","94m","96m","103m","80m","116m","85m","197m","120m","1248m","-"];
+const fallback={
+top44010:[{name:"Toni Luoma-aho",total:42,plus:"+1"},{name:"Eino Vistiaho",total:43,plus:"+2"},{name:"Benjamin Turja",total:44,plus:"+3"},{name:"Jari Vistiaho",total:46,plus:"+5"},{name:"Julius Luoma-aho",total:47,plus:"+6"},{name:"Joakim Turja",total:49,plus:"+8"},{name:"Jouni Peltomäki",total:49,plus:"+8"},{name:"Juha Luoma-aho",total:51,plus:"+10"},{name:"Juha Vainio",total:55,plus:"+14"},{name:"Mika Korkea-aho",total:57,plus:"+16"}],
+top44763:[{name:"Timo Alalantela",total:82,plus:"E"},{name:"Aapo Penttilä",total:83,plus:"+1"},{name:"Evert Väkeväinen",total:85,plus:"+3"},{name:"Daniel Turja",total:87,plus:"+5"},{name:"Eero Tuohimaa",total:88,plus:"+6"},{name:"Marko Tuohimaa",total:90,plus:"+8"},{name:"Benjamin Turja",total:91,plus:"+9"},{name:"Aapo Viinamäki",total:91,plus:"+9"},{name:"Julius Luoma-aho",total:92,plus:"+10"},{name:"Eino Vistiaho",total:92,plus:"+10"}],
+topUdisc:[{name:"@kantanen8",total:35,plus:"-6",date:"4.7.2026"},{name:"@valkoparta",total:36,plus:"-5",date:"6.7.2026"},{name:"@mattiasss",total:36,plus:"-5",date:"19.8.2026"},{name:"@dashyy",total:38,plus:"-3",date:"13.9.2025"},{name:"@itkonenjere",total:38,plus:"-3",date:"29.4.2026"},{name:"@peetu7",total:39,plus:"-2",date:"24.7.2026"},{name:"@kimmoke",total:39,plus:"-2",date:"11.10.2026"},{name:"@taspak",total:42,plus:"+1",date:"16.7.2026"},{name:"@adusti",total:43,plus:"+2",date:"20.7.2026"},{name:"@tommivluoma",total:47,plus:"+6",date:"8.8.2026"}],
+tiedotteet:[{date:"09.10.2026",title:"Rata auki - syyskausi",message:"Luoma-ahon rata on nyt täydessä syyskunnossa. Väyläopasteet päivitetty.",type:"info"},{date:"05.10.2026",title:"Viikkokisat #3",message:"Aapo Penttilä voitti tuloksella 83 (+1). Seuraavat kisat 18.10.",type:"success"}],
+vayla:{pituus:LOCKED_PITUUS,par:LOCKED_PAR,avg:["4.49", "3.81", "3.52", "3.37", "3.56", "4.13", "4.05", "3.44", "4.65", "4.05", "6.04", "4.44", "49.55", "-"],avgCls:["cell-yellow", "cell-orange", "cell-orange", "cell-yellow", "cell-orange", "cell-red", "cell-red", "cell-yellow", "cell-orange", "cell-red", "cell-red", "cell-yellow", "cell-dark", "cell-dark"],diff:["4", "8", "5", "1", "6", "12", "10", "2", "7", "11", "9", "3", "78", "-"],diffCls:["cell-yellow", "cell-orange", "cell-yellow", "cell-green", "cell-yellow", "cell-red", "cell-red", "cell-green", "cell-orange", "cell-red", "cell-orange", "cell-green", "cell-dark", "cell-dark"],hio:[0, 0, 0, 4, 0, 0, 0, 1, 0, 0, 0, 0, 5, "0.0%"],birdie:[147, 45, 84, 301, 45, 45, 45, 138, 124, 45, 77, 253, 1349, "9.2%"],par0:[557, 413, 648, 377, 613, 348, 345, 564, 548, 342, 301, 530, 5586, "38.1%"],bogey:[336, 494, 318, 351, 366, 537, 539, 337, 357, 541, 516, 285, 4977, "34.0%"],dbl:[124, 184, 118, 130, 135, 200, 200, 124, 132, 201, 224, 106, 1878, "12.8%"],tpl:[38, 58, 36, 40, 41, 63, 63, 38, 40, 63, 71, 32, 583, "4.0%"],other:[19, 27, 17, 18, 21, 28, 29, 19, 20, 29, 32, 15, 274, "1.9%"]},
+kilpailut:[
+  {date:"07.11 - 19.12.2026",name:"PAKKASSARJA KOKO SARJA - 4 parasta 7:stä",course:"44010",courseName:"Luoma-aho",competitionId:"3819613",id:"3819613",type:"Sarja",url:"https://discgolfmetrix.com/3819613",reg:"Avoinna",players:1,isSeries:true},
+  {date:"07.11.2026 12:00",name:"PAKKASSARJA #1 - 7.11",course:"44010",courseName:"Luoma-aho",competitionId:"3819645",id:"3819645",type:"Viikkokisa",url:"https://discgolfmetrix.com/3819645",reg:"Avoinna",players:1},
+  {date:"14.11.2026 12:00",name:"PAKKASSARJA #2 - 14.11",course:"44010",courseName:"Luoma-aho",competitionId:"3819646",id:"3819646",type:"Viikkokisa",url:"https://discgolfmetrix.com/3819646",reg:"Avoinna",players:0},
+  {date:"21.11.2026 12:00",name:"PAKKASSARJA #3 - 21.11",course:"44010",courseName:"Luoma-aho",competitionId:"3820197",id:"3820197",type:"Viikkokisa",url:"https://discgolfmetrix.com/3820197",reg:"Avoinna",players:0},
+  {date:"28.11.2026 12:00",name:"PAKKASSARJA #4 - 28.11",course:"44010",courseName:"Luoma-aho",competitionId:"3820198",id:"3820198",type:"Viikkokisa",url:"https://discgolfmetrix.com/3820198",reg:"Tulossa",players:0},
+  {date:"05.12.2026 12:00",name:"PAKKASSARJA #5 - 5.12",course:"44010",courseName:"Luoma-aho",competitionId:"3820199",id:"3820199",type:"Viikkokisa",url:"https://discgolfmetrix.com/3820199",reg:"Tulossa",players:0},
+  {date:"12.12.2026 12:00",name:"PAKKASSARJA #6 - 12.12",course:"44010",courseName:"Luoma-aho",competitionId:"3820200",id:"3820200",type:"Viikkokisa",url:"https://discgolfmetrix.com/3820200",reg:"Tulossa",players:0},
+  {date:"19.12.2026 12:00",name:"PAKKASSARJA #7 - 19.12 FINALE",course:"44010",courseName:"Luoma-aho",competitionId:"3820202",id:"3820202",type:"Finaali",url:"https://discgolfmetrix.com/3820202",reg:"Tulossa",players:0}
+]
+};
+let lastTiedotteet=null;
+try{const saved=localStorage.getItem("luoma_tiedotteet_v1");if(saved){const parsed=JSON.parse(saved);if(parsed&&parsed.length>0){lastTiedotteet=parsed;}}}catch(e){}
+function renderTop(id,data){
+  if(!data||data.length===0)return;
+  const el=document.getElementById(id);if(!el)return;
+  el.innerHTML="";
+  data.forEach((r,i)=>{
+    const pc=r.plus&&r.plus.includes("-")?"neg":r.plus==="E"?"even":"pos";
+    const d=document.createElement("div");d.className="trow";
+    d.innerHTML=`<span class="rank">${i+1}.</span><span class="name">${r.name}</span><span class="score">${r.total}</span><span class="plus ${pc}">${r.plus||""}</span>`;
+    el.appendChild(d);
+  });
+}
+function renderTiedotteet(data,source=""){
+  try{
+    if(!data||!Array.isArray(data)||data.length===0){
+      if(lastTiedotteet&&lastTiedotteet.length>0){return;}
+      if(fallback.tiedotteet&&fallback.tiedotteet.length>0){data=fallback.tiedotteet;}
+      else{return;}
+    }
+    const valid=data.filter(t=>t.title&&t.message);
+    if(valid.length===0)return;
+    const el=document.getElementById("list-tiedotteet");if(!el)return;
+    el.innerHTML="";
+    valid.forEach(t=>{
+      const div=document.createElement("div");div.className="tiedote-item";
+      div.innerHTML=`<div class="tiedote-date">${t.date||""}</div><div class="tiedote-title">${t.title||""}</div><div class="tiedote-msg">${t.message||""}</div>`;
+      el.appendChild(div);
+    });
+    lastTiedotteet=valid;
+    try{localStorage.setItem("luoma_tiedotteet_v1",JSON.stringify(valid));}catch(e){}
+  }catch(e){}
+}
+function renderVayla(v){
+  try{
+    if(!v) return;
+    // V5.2 FIX: LOCKED_PAR ja PITUUS, mutta avg/diff laskenta korjattu
+    v.par = LOCKED_PAR;
+    v.pituus = LOCKED_PITUUS;
+    if(!v.pituus || v.pituus.length<12)return;
+    // Bug4 FIX: Avg väri over par logiikalla (kuten V5.2)
+    const autoAvgCls=(avg,par)=>{
+      if(!avg||!par||avg===" -"||par==="-")return"cell-dark";
+      const a=parseFloat(avg); const p=parseInt(par);
+      if(isNaN(a)||isNaN(p))return"cell-dark";
+      const d=a-p;
+      if(d>=1.0)return"cell-red";      // yli 1 yli par = punainen (vaikea)
+      if(d>=0.5)return"cell-orange";   // 0.5-1.0 oranssi
+      if(d>=0.2)return"cell-yellow";   // 0.2-0.5 keltainen
+      return"cell-green";              // alle 0.2 vihreä (helppo)
+    };
+    // Bug1 FIX: Difficulty väri ranking logiikalla 1-3 vihreä, 4-6 keltainen, 7-9 oranssi, 10-12 punainen
+    const autoDiffCls=(diff)=>{
+      const n=parseInt(diff);
+      if(isNaN(n))return"cell-dark";
+      if(n<=3)return"cell-green";      // 1-3 helpoimmat = vihreä
+      if(n<=6)return"cell-yellow";     // 4-6 keskitaso keltainen
+      if(n<=9)return"cell-orange";     // 7-9 vaikeat oranssi
+      return"cell-red";                // 10-12 vaikeimmat punainen
+    };
+    // V5.2: Jos avgCls/diffCls puuttuu tai on vanha (10.7 bugi), laske uudelleen
+    if(!v.avgCls||v.avgCls.length<12 || v.version && v.version.includes("V5.1")){
+      v.avgCls=v.avg.slice(0,12).map((a,i)=>autoAvgCls(a,LOCKED_PAR[i]));
+    }
+    if(!v.diffCls||v.diffCls.length<12 || v.difficulty_total=="10.7" || v.difficulty_total=="10.8"){
+      v.diffCls=(v.difficulty||v.diff||[]).slice(0,12).map(d=>autoDiffCls(d));
+      // Bug1 FIX: Difficulty Tot = 78 (sum 1-12), ei 10.7
+      if(v.difficulty) v.difficulty[12]="78";
+      if(v.diff) v.diff[12]="78";
+    }
+    const body=document.getElementById("vayla-body");if(!body)return;
+    body.innerHTML="";
+    const rows=[["Pituus",...v.pituus],["Par",...v.par],["Avg",...v.avg],["Difficulty",...v.difficulty||v.diff],["Hole in one",...v.hio],["Birdie -1",...v.birdie],["Par 0",...v.par0],["Bogey 1",...v.bogey],["Dbl Bogey 2",...v.dbl],["Tpl Bogey 3",...v.tpl],["Other >3",...v.other]];
+    rows.forEach((row,ri)=>{
+      const tr=document.createElement("tr");
+      row.forEach((cell,ci)=>{
+        const td=document.createElement("td");td.textContent=cell;
+        if(ri===2&&ci>0&&ci<13)td.className=v.avgCls[ci-1]||autoAvgCls(v.avg[ci-1],LOCKED_PAR[ci-1]);
+        else if(ri===3&&ci>0&&ci<13)td.className=v.diffCls[ci-1]||autoDiffCls(v.difficulty? v.difficulty[ci-1]: v.diff[ci-1]);
+        if(ci===0){td.style.textAlign="left";td.style.fontWeight="700";td.style.background="#111";}
+        tr.appendChild(td);
+      });
+      body.appendChild(tr);
+    });
+  }catch(e){console.error("renderVayla V5.2 fail", e);}
+}
+function renderKilpailut(data){
+  try{
+    const el=document.getElementById("list-kilpailut"); if(!el) return;
+    const badge=document.getElementById("kilpailut-badge");
+    if(!data || data.length===0){
+      el.innerHTML=`<div class="kilpailu-empty">Ei aktiivisia kilpailuja<br><span style="font-size:9px;color:#555">Uusin aina ylimpänä<br>Loppuneet poistuu automaattisesti</span></div>`;
+      if(badge) badge.textContent="0";
+      return;
+    }
+    const parseDate = (d)=>{
+      try{
+        // Tukee "07.11.2026 12:00" ja "07.11 - 19.12.2026" (ottaa jälkimmäisen päivän)
+        const full = d.match(/(\d{1,2})\.(\d{1,2})\.(\d{4})\s*(\d{1,2}):(\d{2})/);
+        if(full) return new Date(parseInt(full[3]), parseInt(full[2])-1, parseInt(full[1]), parseInt(full[4]), parseInt(full[5])).getTime();
+        const range = d.match(/(\d{1,2})\.(\d{1,2})\s*-\s*(\d{1,2})\.(\d{1,2})\.(\d{4})/);
+        if(range) return new Date(parseInt(range[5]), parseInt(range[4])-1, parseInt(range[3]), 23, 59).getTime();
+      }catch(e){}
+      return 0;
+    };
+    const isFinished = (k)=>{
+      const t = parseDate(k.date||"");
+      if(!t) return false;
+      const now = Date.now();
+      // Jos kisa loppunut yli 24h sitten, siirretään pois listalta automaattisesti
+      // Pakkassarja kisa kestää ~4h, joten +24h varmuudella ohi
+      if(t + 24*60*60*1000 < now){
+        // Jos on sarja (koko sarja), älä poista
+        if(k.isSeries) return false;
+        return true;
+      }
+      // Jos reg on "Päättynyt" tai "Suljettu"
+      const reg = (k.reg||"").toLowerCase();
+      if(reg.includes("päättynyt") || reg.includes("suljettu") || reg.includes("finished")) return true;
+      return false;
+    };
+    const isActive = (k)=>{
+      const reg = (k.reg||"").toLowerCase();
+      return reg.includes("avoin") || reg.includes("käynn") || reg.includes("live");
+    };
+    // SUODATA: poista loppuneet kilpailut automaattisesti listalta
+    let filtered = [...data].filter(k=>!isFinished(k));
+    // SORTTAA: Koko sarja ylimpänä, loput 07.11 -> 19.12 nouseva (ensimmäinen ensin)
+    let sorted = filtered.sort((a,b)=>{
+      const aIsSeries = a.isSeries ? 1 : 0;
+      const bIsSeries = b.isSeries ? 1 : 0;
+      if(aIsSeries !== bIsSeries) return bIsSeries - aIsSeries; // sarja ylimpänä
+      return parseDate(a.date||"") - parseDate(b.date||""); // 07.11 ensin, 19.12 viimeinen
+    });
+    el.innerHTML="";
+    sorted.forEach(k=>{
+      const div=document.createElement("div"); div.className="kilpailu-item";
+      div.style.cursor="pointer";
+      if(isActive(k)){ div.style.borderLeft="3px solid #1aff1a"; div.style.background="#1a1a0a"; }
+      const date = k.date||"";
+      const name = k.name||"Nimetön kisa";
+      const course = k.courseName||k.course||"";
+      const courseId = k.course||"";
+      const reg = k.reg||"";
+      const players = k.players||0;
+      div.innerHTML=`<div class="kilpailu-date">${date} ${reg? '• ' + reg:""} ${players? '• ' + players + ' hlö':""}</div><div class="kilpailu-name">${name}</div><div class="kilpailu-meta"><span class="kilpailu-course">${course} ${courseId}</span><span class="kilpailu-link">Näytä tilanne →</span></div>`;
+      div.addEventListener("click", ()=>{
+        document.querySelectorAll(".kilpailu-item").forEach(e=>e.style.outline="");
+        div.style.outline="1px solid #1aff1a";
+        loadKilpailuTilanne(k);
+      });
+      el.appendChild(div);
+    });
+    if(badge) badge.textContent=sorted.length; // näyttää vain aktiiviset, loppuneet poistettu
+    // AUTO-LOAD: näytä tilanne suoraan korttiin ilman klikkausta - ensimmäinen aktiivinen
+    if(sorted && sorted.length>0){
+      setTimeout(()=>{ loadKilpailuTilanne(sorted[0]); }, 100);
+    }
+  }catch(e){console.error(e);}
+}
+let currentCompetition = null;
+function extractCompetitionId(k){
+  if(k.competitionId) return k.competitionId;
+  if(k.url){
+    const m1 = k.url.match(/competition\/(\d+)/);
+    if(m1) return m1[1];
+    const m2 = k.url.match(/\/(\d{5,})\/?(?:\?|$)/);
+    if(m2) return m2[1];
+  }
+  return k.course||"";
+}
+async function loadKilpailuTilanne(k){
+  try{
+    currentCompetition = k;
+    const compId = extractCompetitionId(k);
+    const nameEl = document.getElementById("tilanne-competition-name");
+    const timeEl = document.getElementById("tilanne-competition-time");
+    const listEl = document.getElementById("list-tilanne");
+    const badge = document.getElementById("tilanne-badge");
+    if(nameEl) nameEl.textContent = k.name||"Ladataan...";
+    if(timeEl) timeEl.textContent = k.date||"";
+    if(listEl) listEl.innerHTML = `<div class="tilanne-empty">Haetaan tilannetta...<br>ID: ${compId}<br><br>api.php?content=result&id=${compId}</div>`;
+    if(badge) badge.textContent = "⏳";
+    try{
+      const r = await fetch(`data/kilpailu_tilanne.json?v=${Date.now()}`,{cache:"no-store"});
+      if(r.ok){
+        const j = await r.json();
+        const comp = j.competitions ? (j.competitions.find(c=>String(c.id)===String(compId)) || j.competitions[0]) : null;
+        if(comp){ 
+          // Näytä suoraan kortissa vaikka ei tuloksia vielä - ei tarvitse klikata Metrix
+          renderTilanne(comp); 
+          return; 
+        }
+        if(j.results || j.id){ renderTilanne(j); return; }
+        if(j.current){ renderTilanne(j.current); return; }
+      }
+    }catch(e){}
+    try{
+      const apiUrl = `https://discgolfmetrix.com/api.php?content=result&id=${compId}`;
+      const r = await fetch(apiUrl);
+      if(r.ok){
+        const j = await r.json();
+        if(j && j.Competition && j.Competition.Results){
+          renderTilanne({
+            id: compId,
+            name: j.Competition.Name||k.name,
+            date: j.Competition.Date||k.date,
+            url: k.url,
+            results: j.Competition.Results.map((p,i)=>({
+              rank: i+1,
+              name: p.Name,
+              total: p.Sum,
+              plus: (p.Diff>0? "+" + p.Diff : p.Diff===0 ? "E" : "" + p.Diff),
+              diff: p.Diff
+            }))
+          });
+          return;
+        }
+      }
+    }catch(e){}
+    if(listEl){
+      // Näytä suoraan kortissa, ei LINKkiä - kuten viimeksi
+      listEl.innerHTML = `<div class="tilanne-empty">
+        <span style="font-size:11px;color:#fff;font-weight:800">${k.name||"Kilpailu"}</span><br>
+        <span style="font-size:9px;color:#888">${k.date||""}</span><br><br>
+        <span style="font-size:10px;color:#aaa">Ei tuloksia vielä</span><br>
+        <span style="font-size:9px;color:#555">${k.courseName||""} ${compId}</span><br><br>
+        <span style="font-size:9px;color:#1aff1a">Päivittyy automaattisesti kun kisa alkaa</span>
+      </div>`;
+    }
+    if(badge) badge.textContent = "0";
+  }catch(e){}
+}
+function renderTilanne(comp){
+  try{
+    const el = document.getElementById("list-tilanne");
+    const nameEl = document.getElementById("tilanne-competition-name");
+    const timeEl = document.getElementById("tilanne-competition-time");
+    const badge = document.getElementById("tilanne-badge");
+    if(!el) return;
+    if(nameEl) nameEl.textContent = comp.name||"Kilpailu";
+    if(timeEl) timeEl.textContent = comp.date||"";
+    if(badge) badge.textContent = comp.results ? comp.results.length : (comp.registered || "0");
+    const results = comp.results || [];
+    if(!results || results.length===0){
+      // Näytä suoraan kortissa, ei LINKkiä
+      const status = comp.status || "Tulossa";
+      const reg = comp.registered || 0;
+      el.innerHTML = `<div class="tilanne-empty">
+        ${status}<br>
+        <span style="font-size:10px;color:#888">${reg} ilmoittautunut</span><br><br>
+        <span style="font-size:11px;color:#aaa">Ei tuloksia vielä</span><br>
+        <span style="font-size:9px;color:#555">${comp.name||""}</span><br><br>
+        <span style="font-size:9px;color:#1aff1a">${comp.date||""}</span>
+      </div>`;
+      return;
+    }
+    el.innerHTML = "";
+    const header = document.createElement("div");
+    header.className = "tilanne-header";
+    header.innerHTML = `<span># Nimi</span><span>Tulos</span>`;
+    el.appendChild(header);
+    results.slice(0,30).forEach((r,i)=>{
+      const div = document.createElement("div");
+      div.className = "tilanne-item";
+      const rank = r.rank || i+1;
+      const name = r.name || "Nimetön";
+      const total = r.total ?? "-";
+      const plus = r.plus || "";
+      const isNeg = plus.includes("-");
+      const pc = isNeg ? "neg" : (plus==="E" ? "" : "pos");
+      div.innerHTML = `<span class="tilanne-rank">${rank}.</span><span class="tilanne-name">${name}</span><span class="tilanne-score">${total}</span><span class="tilanne-plus ${pc}">${plus}</span>`;
+      el.appendChild(div);
+    });
+    const footer = document.createElement("div");
+    footer.style.padding="6px 8px"; footer.style.textAlign="center";
+    footer.innerHTML = `<a href="${comp.url||`https://discgolfmetrix.com/api.php?content=result&id=${comp.id}`}" target="_blank" class="kilpailu-link">Avaa koko tulos ↗</a>`;
+    el.appendChild(footer);
+  }catch(e){}
+}
+
+if(lastTiedotteet){renderTiedotteet(lastTiedotteet,"localStorage init");}
+else{renderTiedotteet(fallback.tiedotteet,"fallback init");}
+renderTop("list-44010",fallback.top44010);renderTop("list-44763",fallback.top44763);renderTop("list-udisc",fallback.topUdisc);renderVayla(fallback.vayla);renderKilpailut(fallback.kilpailut);
+// Yritä ladata tilanne suoraan korttiin ilman Metrix-klikkausta
+(async()=>{ try{ const r=await fetch(`data/kilpailu_tilanne.json?v=${Date.now()}`,{cache:"no-store"}); if(r.ok){ const j=await r.json(); if(j.current){ renderTilanne(j.current); } else if(j.competitions && j.competitions[0]){ renderTilanne(j.competitions[0]); } } }catch(e){} })();
+
+async function refreshAll(){
+  try{const r=await fetch(`data/metrix_44010.json?v=${Date.now()}`,{cache:"no-store"});if(r.ok){const j=await r.json();if(j.top10&&j.top10.length>0)renderTop("list-44010",j.top10.map(o=>({name:o.name,total:o.total,plus:o.plus_minus||o.plus||""})));}}catch(e){}
+  try{const r=await fetch(`data/metrix_44763.json?v=${Date.now()}`,{cache:"no-store"});if(r.ok){const j=await r.json();if(j.top10&&j.top10.length>0)renderTop("list-44763",j.top10.map(o=>({name:o.name,total:o.total,plus:o.plus_minus||o.plus||""})));}}catch(e){}
+  try{const r=await fetch(`data/kierrokset.json?v=${Date.now()}`,{cache:"no-store"});if(r.ok){const j=await r.json();if(j.total_rounds){document.getElementById("v-kierrokset").textContent=j.total_rounds;document.getElementById("v-unique").textContent=j.unique_players;document.getElementById("v-peliaika").textContent=j.peliaika.display;document.getElementById("v-askel").textContent=j.askeleet.display;document.getElementById("v-km").textContent=j.kilometrit.display;}}}catch(e){}
+  try{const r=await fetch(`data/vaylatilasto.json?v=${Date.now()}`,{cache:"no-store"});if(r.ok){const j=await r.json();if(j.pituus&&j.pituus.length>=12){j.par=LOCKED_PAR;j.pituus=LOCKED_PITUUS;renderVayla(j);}}}catch(e){}
+  try{const r=await fetch(`data/udisc.json?v=${Date.now()}`,{cache:"no-store"});if(r.ok){const j=await r.json();if(j.top10&&j.top10.length>0)renderTop("list-udisc",j.top10.map(o=>({name:o.name,total:o.total,plus:o.plus_minus||o.plus||""})));}}catch(e){}
+  try{const r=await fetch(`data/metrix_kilpailut.json?v=${Date.now()}`,{cache:"no-store"});if(r.ok){const j=await r.json();const list=j.upcoming||j.kilpailut||j.events||[];if(list.length>0){ renderKilpailut(list); } else { renderKilpailut(fallback.kilpailut); } }}catch(e){ renderKilpailut(fallback.kilpailut); }
+  // AUTO-LOAD tilanne suoraan korttiin ilman klikkausta
+  try{const r=await fetch(`data/kilpailu_tilanne.json?v=${Date.now()}`,{cache:"no-store"});if(r.ok){const j=await r.json();if(j.current && j.current.results){ renderTilanne(j.current); } else if(j.competitions && j.competitions.length>0 && j.competitions[0].results){ renderTilanne(j.competitions[0]); } }}catch(e){}
+  try{const r=await fetch(`data/tiedotteet.json?v=${Date.now()}`,{cache:"no-store"});if(r.ok){const j=await r.json();if(j.tiedotteet&&Array.isArray(j.tiedotteet)&&j.tiedotteet.length>0){renderTiedotteet(j.tiedotteet,"live fetch");}}}catch(e){}
+  try{
+    const r=await fetch(`data/vieraskirja.json?v=${Date.now()}`,{cache:"no-store"});
+    if(r.ok){
+      const j=await r.json();
+      const entries=j.entries||[];
+      const stats=j.stats||{};
+      // Käytä stats jos lukittu, muuten laske
+      const ratings=entries.filter(e=>e.rating>0);
+      const avgVal = stats.avg && stats.avg>0 ? stats.avg : (ratings.length?(ratings.reduce((a,b)=>a+b.rating,0)/ratings.length):0);
+      const countVal = stats.ratings || ratings.length;
+      const el=document.getElementById("extra-vieraskirja");
+      const el2=document.getElementById("extra-vieraskirja-viimeisin");
+      if(el){
+        if(countVal>0){el.textContent=`⭐ ${avgVal.toFixed(1)}/5 (${countVal} arviota)`;}
+        else{el.textContent=`⭐ 0.0/5 (0 arviota)`;}
+      }
+      if(el2){
+        if(entries.length>0){
+          // UUSIN YLIMPÄNÄ: sorttaa ja ota uusin (kuten vieraskirja.html)
+          const parseDate=(d)=>{try{const p=d.split('.');if(p.length===3)return new Date(parseInt(p[2]),parseInt(p[1])-1,parseInt(p[0])).getTime();}catch(e){}return 0;};
+          const sorted=[...entries].sort((a,b)=>parseDate(b.date)-parseDate(a.date));
+          const newest=sorted[0];
+          el2.textContent=`Viimeisin: ${newest.name} - "${newest.message.slice(0,30)}..."`;
+        }else{el2.textContent=`Ei vielä arvosteluja`;}
+      }
+    }
+  }catch(e){console.log("vieraskirja fetch fail", e);}
+}
+setInterval(refreshAll, 300000);
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")refreshAll();});
+</script>
+</body></html>

@@ -1,0 +1,90 @@
+{
+  "course_id": "44010",
+  "par": 41,
+  "top10": [
+    {
+      "rank": 1,
+      "name": "Toni Luoma-aho",
+      "total": 42,
+      "plus_minus": "+1",
+      "date": "4/29/26 18:00",
+      "course_id": "44010"
+    },
+    {
+      "rank": 2,
+      "name": "Eino Vistiaho",
+      "total": 43,
+      "plus_minus": "+2",
+      "date": "4/29/26 18:00",
+      "course_id": "44010"
+    },
+    {
+      "rank": 3,
+      "name": "Benjamin Turja",
+      "total": 44,
+      "plus_minus": "+3",
+      "date": "10/5/25 16:00",
+      "course_id": "44010"
+    },
+    {
+      "rank": 4,
+      "name": "Jari Vistiaho",
+      "total": 46,
+      "plus_minus": "+5",
+      "date": "4/29/26 18:00",
+      "course_id": "44010"
+    },
+    {
+      "rank": 5,
+      "name": "Julius Luoma-aho",
+      "total": 47,
+      "plus_minus": "+6",
+      "date": "10/7/25 17:00",
+      "course_id": "44010"
+    },
+    {
+      "rank": 6,
+      "name": "Joakim Turja",
+      "total": 49,
+      "plus_minus": "+8",
+      "date": "10/5/25 16:00",
+      "course_id": "44010"
+    },
+    {
+      "rank": 7,
+      "name": "Jouni Peltomäki",
+      "total": 49,
+      "plus_minus": "+8",
+      "date": "5/23/26 16:30",
+      "course_id": "44010"
+    },
+    {
+      "rank": 8,
+      "name": "Juha Luoma-aho",
+      "total": 51,
+      "plus_minus": "+10",
+      "date": "4/3/26 14:00",
+      "course_id": "44010"
+    },
+    {
+      "rank": 9,
+      "name": "Juha Vainio",
+      "total": 55,
+      "plus_minus": "+14",
+      "date": "10/5/25 16:00",
+      "course_id": "44010"
+    },
+    {
+      "rank": 10,
+      "name": "jari peltola",
+      "total": 56,
+      "plus_minus": "+15",
+      "date": "5/23/26 16:30",
+      "course_id": "44010"
+    }
+  ],
+  "total_results": 30,
+  "unique_players": 11,
+  "fetched_at": "2026-10-19T06:29:41.562842+00:00",
+  "version": "V30 LIVE - parent 43119"
+}
